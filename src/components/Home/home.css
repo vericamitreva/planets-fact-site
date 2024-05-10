@@ -40,6 +40,10 @@
     width: 70%;
 }
 
+.planet-image img {
+    max-width: 500px;
+}
+
 .geology-pin {
     position: absolute;
     scale: 40%;
