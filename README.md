@@ -2,7 +2,7 @@
 
 React-based planets fact site that features a dynamic experience.
 
-![screenshot](./src/planets-fact-site.png)
+![screenshot](./public/planets-fact-site.png)
 
 ## Built With
 
