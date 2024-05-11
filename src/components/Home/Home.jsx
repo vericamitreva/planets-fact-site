@@ -103,19 +103,19 @@ export default function Home() {
                                     {activeSection === "overview" && (
                                         <>
                                             <p>{selectedPlanet.overview.content}</p>
-                                            <p style={{color:"#838391"}}>Source : <a href={selectedPlanet.overview.source}>Wikipedia<span><IconSource/></span></a></p>
+                                            <p style={{color:"#838391"}}>Source : <a href={selectedPlanet.overview.source} target="_blank">Wikipedia<span><IconSource/></span></a></p>
                                         </>
                                     )}
                                     {activeSection === "structure" && (
                                         <>
                                             <p>{selectedPlanet.structure.content}</p>
-                                            <p style={{color:"#838391"}}>Source : <a href={selectedPlanet.structure.source}>Wikipedia<span><IconSource/></span></a></p>
+                                            <p style={{color:"#838391"}}>Source : <a href={selectedPlanet.structure.source} target="_blank">Wikipedia<span><IconSource/></span></a></p>
                                         </>
                                     )}
                                     {activeSection === "geology" && (
                                         <>
                                             <p>{selectedPlanet.geology.content}</p>
-                                            <p style={{color:"#838391"}}>Source : <a href={selectedPlanet.geology.source}>Wikipedia<span><IconSource/></span></a></p>
+                                            <p style={{color:"#838391"}}>Source : <a href={selectedPlanet.geology.source} target="_blank">Wikipedia<span><IconSource/></span></a></p>
                                         </>
                                     )}
                                 </div>
