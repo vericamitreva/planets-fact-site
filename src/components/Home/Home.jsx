@@ -2,16 +2,18 @@ import './home.css'
 import Header from "../Header/Header.jsx"
 import data from "../../data/data.js"
 import IconSource from "../assets/assets.js"
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 export default function Home() {
     const [selectedPlanet, setSelectedPlanet] = useState(data[0])
     const [activeSection, setActiveSection] = useState("overview")
     const [activePlanetIndex, setActivePlanetIndex] = useState(0)
+    const [isMobileScreen, setIsMobileScreen] = useState(false)
 
     const handlePlanetClick = (index) => {
         setSelectedPlanet(data[index])
         setActivePlanetIndex(index)
+        setActiveSection("overview")
     }
 
     const handleActiveSection = (section) => {
@@ -49,12 +51,33 @@ export default function Home() {
         }
     }
 
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobileScreen(window.innerWidth <= 768);
+        }
+
+        window.addEventListener("resize", handleResize);
+        handleResize()
+
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
     return (
         <home>
             <div className='home-container'>
-                <Header onPlanetClick={handlePlanetClick}/>
+                <Header 
+                    onPlanetClick={handlePlanetClick}
+                    activePlanetIndex={activePlanetIndex}
+                    getActiveButtonColorClass={getActiveButtonColorClass}/>
                 <div className='home-container-wrapper'>
                     <div className='home-container-content'>
+                        {isMobileScreen && (
+                            <div className='mobile-buttons'>
+                                <h4 className={`mobile-button ${activeSection === "overview" ? "active" : ""} ${getActiveButtonColorClass()}`}   onClick={()=>handleActiveSection("overview")}>OVERVIEW</h4>
+                                <h4 className={`mobile-button ${activeSection === "structure" ? "active" : ""} ${getActiveButtonColorClass()}`} onClick={()=>handleActiveSection("structure")}>STRUCTURE</h4>
+                                <h4 className={`mobile-button ${activeSection === "geology" ? "active" : ""} ${getActiveButtonColorClass()}`} onClick={()=>handleActiveSection("geology")}>SURFACE</h4>
+                            </div>
+                        )}
                         <div className='planet-image-info'>
                             <div className='planet-image'>
                             {activeSection === "overview" && (

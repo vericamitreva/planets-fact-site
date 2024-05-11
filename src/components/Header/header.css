@@ -20,22 +20,74 @@
 
 .nav-menu {
     display: flex;
-    color: #838391;
     width: 50%;
     justify-content: space-between;
 }
 
 .nav-menu h4 {
     margin: 0;
+    color: #838391;
 }
 
 .nav-menu h4:hover {
     cursor: pointer;
-    color: #838391;
+    color: #ffffff;
 }
 
-.nav-menu h4:active {
-    color: #838391;
+.nav-menu h4 {
+    position: relative;
+}
+
+.nav-menu h4.active::before {
+    content: "";
+    position: absolute;
+    top: -20px; 
+    left: 0; 
+    width: 100%; 
+    height: 3px; 
+    background-color: white; 
+}
+
+.nav-menu h4.active {
+    color: white;
+}
+
+.nav-menu h4.active.mercury::before {
+    background-color: #419EBB;
+}
+
+.nav-menu h4.active.venus::before {
+    background-color: #EDA249;
+}
+
+.nav-menu h4.active.earth::before {
+    background-color: #6f2ed6;
+}
+
+.nav-menu h4.active.mars::before {
+    background-color: #D14C32;
+}
+
+.nav-menu h4.active.jupiter::before {
+    background-color: #D83A34;
+}
+
+.nav-menu h4.active.saturn::before {
+    background-color: #CD5120;
+}
+
+.nav-menu h4.active.uranus::before {
+    background-color: #1ec2a4;
+}
+
+.nav-menu h4.active.neptune::before {
+    background-color: #2d68f0;
+}
+
+.mobile-menu-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -45,5 +97,15 @@
 
     .nav-menu {
         width: 80%;
+    }
+
+    .nav-menu h4.active::before {
+        top: -5px; 
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .header-container-wrapper {
+        flex-direction: row;
     }
 }
