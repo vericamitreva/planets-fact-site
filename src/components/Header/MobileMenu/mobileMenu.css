@@ -6,7 +6,7 @@
     right: 0;
     bottom: 0;
     width: 100%;
-    height: calc(100vh - 60px);
+    height: 100vh;
     z-index: 999;
 }
 
