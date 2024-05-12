@@ -3,9 +3,10 @@
     position: fixed;
     top: 60px;
     left: 0;
+    right: 0;
     bottom: 0;
     width: 100%;
-    height: 100dvh;
+    height: calc(100vh - 60px);
     z-index: 999;
 }
 
@@ -15,6 +16,7 @@
     justify-content: center;
     height: 100%;
     width: 100%; 
+    box-sizing: border-box; 
 }
 
 .mobile-menu-container {
