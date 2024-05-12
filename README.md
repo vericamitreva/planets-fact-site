@@ -13,7 +13,7 @@ React-based planets fact site that features a dynamic experience.
 
 ## Live Demo
 
-[Live Demo Link](https://663e739b1107b2309fa0bf7c--planets-fact-site-project.netlify.app/)
+[Live Demo Link](https://planets-fact-site-project.netlify.app/)
 
 ## Getting Started
 
