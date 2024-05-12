@@ -296,8 +296,8 @@
     }
 
     .planet-image-info {
-        gap: 40px;
-        width: 80%;
+        gap: 12px;
+        width: 90%;
     }
 
     .planet-image img {
@@ -316,6 +316,7 @@
     .planet-info p {
         margin: 0;
         text-align: center;
+        line-height: 22px;
     }
 
     .info {
@@ -344,4 +345,7 @@
         padding-inline: 5%;
     }
 
+    .characteristics h2 {
+        font-size: 20px;
+    }
 }
